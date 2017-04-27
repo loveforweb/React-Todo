@@ -35,7 +35,8 @@ module.exports = {
             __dirname, 'node_modules', 'public/components'
         ],
         alias: {
-            applicationStyles: 'app/styles/app.scss'
+            applicationStyles: 'app/styles/app.scss',
+            TodoApp: 'app/components/TodoApp'
         },
         extensions: ['.js', '.jsx']
     },
