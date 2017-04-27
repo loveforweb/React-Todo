@@ -36,6 +36,7 @@ module.exports = {
         ],
         alias: {
             applicationStyles: 'app/styles/app.scss',
+            AddTodo: 'app/components/AddTodo',
             TodoApp: 'app/components/TodoApp',
             TodoList: 'app/components/TodoList',
             Todo: 'app/components/Todo'
