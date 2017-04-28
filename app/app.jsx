@@ -4,7 +4,7 @@ import {Route, Router, IndexRoute, hashHistory } from 'react-router';
 
 import TodoApp from 'TodoApp';
 
-require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
+// require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
 
 require('style-loader!css-loader!sass-loader!applicationStyles');
 
