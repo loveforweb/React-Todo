@@ -23,7 +23,6 @@ module.exports = {
 
     filterTodos: function (todos, showCompleted, searchText) {
         let filteredTodos = todos;
-        console.log(searchText.length);
 
         // Filter by showCompleted
         filteredTodos = filteredTodos.filter((todo) => {
