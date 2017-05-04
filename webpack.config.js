@@ -32,17 +32,11 @@ module.exports = {
     },
     resolve: {
         modules: [
-            __dirname, 'node_modules', 'public/components'
+            __dirname, 'node_modules', './app/components', './app/api', './app/actions'
         ],
         alias: {
             applicationStyles: 'app/styles/app.scss',
-            AddTodo: 'app/components/AddTodo',
-            TodoApp: 'app/components/TodoApp',
-            TodoList: 'app/components/TodoList',
-            Todo: 'app/components/Todo',
-            TodoSearch: 'app/components/TodoSearch',
-
-            TodoAPI: 'app/api/TodoAPI'
+            actions: 'app/actions/actions.jsx'
         },
         extensions: ['.js', '.jsx']
     },
