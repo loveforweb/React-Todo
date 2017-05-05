@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import {Route, Router, IndexRoute, hashHistory } from 'react-router';
 
 import TodoApp from 'TodoApp';
-
-// var actions = require ('actions');
-import { addToDo, setSearchText, toggleShowCompleted } from 'actions';
+import { addTodo, setSearchText, toggleShowCompleted } from 'actions';
 var store = require('configureStore').configure();
 
 store.subscribe(() => {
     console.log('New state', store.getState())
 })
 
-store.dispatch(addToDo('Clean garden'));
+store.dispatch(addTodo('Clean garden'));
 store.dispatch(setSearchText('garden'));
 store.dispatch(toggleShowCompleted());
 
@@ -23,6 +22,8 @@ require('style-loader!css-loader!sass-loader!applicationStyles');
 $(document).foundation();
 
 ReactDOM.render(
-    <TodoApp />,
+    <Provider store={store}>
+        <TodoApp />
+    </Provider>,
     document.getElementById('app') 
 );

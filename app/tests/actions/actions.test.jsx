@@ -1,6 +1,6 @@
 import expect from 'expect';
 // var actions = require('actions');
-import { setSearchText, addToDo, toggleShowCompleted, toggleTODO } from 'actions';
+import { setSearchText, addTodo, toggleShowCompleted, toggleTodo } from 'actions';
 
 describe('Actions', () => {
     it('should generate search text action', () => {
@@ -20,7 +20,7 @@ describe('Actions', () => {
             text: 'Clean kitchen'
         }
 
-        var res = addToDo(action.text);
+        var res = addTodo(action.text);
 
         expect(res).toEqual(action);
     });
@@ -41,7 +41,7 @@ describe('Actions', () => {
             id: '123ABC'
         }
 
-        var res = toggleTODO(action.id);
+        var res = toggleTodo(action.id);
 
         expect(res).toEqual(action);
     });

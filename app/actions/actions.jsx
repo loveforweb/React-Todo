@@ -11,14 +11,14 @@ export var toggleShowCompleted = () => {
     };
 };
 
-export var addToDo = (text) => {
+export var addTodo = (text) => {
     return {
         type: 'ADD_TODO',
         text
     }
 }
 
-export var toggleTODO = (id) => {
+export var toggleTodo = (id) => {
     return {
         type: 'TOGGLE_TODO',
         id
