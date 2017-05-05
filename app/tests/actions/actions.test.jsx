@@ -1,6 +1,6 @@
 import expect from 'expect';
 // var actions = require('actions');
-import { setSearchText, addTodo, toggleShowCompleted, toggleTodo } from 'actions';
+import { setSearchText, addTodo, addTodos, toggleShowCompleted, toggleTodo } from 'actions';
 
 describe('Actions', () => {
     it('should generate search text action', () => {
@@ -10,6 +10,17 @@ describe('Actions', () => {
         }
 
         var res = setSearchText(action.searchText);
+
+        expect(res).toEqual(action);
+    });
+
+
+    it('should generate toggle show completed action', () => {
+        var action = {
+            type: 'TOGGLE_SHOW_COMPLETED'
+        }
+
+        var res = toggleShowCompleted(action);
 
         expect(res).toEqual(action);
     });
@@ -25,15 +36,25 @@ describe('Actions', () => {
         expect(res).toEqual(action);
     });
 
-    it('should generate toggle show completed action', () => {
-        var action = {
-            type: 'TOGGLE_SHOW_COMPLETED'
-        }
+    it('should generate add todos action object', () => {
+        var todos = [{
+            id: 111, 
+            text: 'anything',
+            completed: false,
+            completedAt: undefined,
+            createdAt: 1000
+        }];
 
-        var res = toggleShowCompleted(action);
+        var action = {
+            type: 'ADD_TODOS',
+            todos
+        };
+
+        var res = addTodos(todos);
 
         expect(res).toEqual(action);
     });
+
 
     it('should generate toggle todo action', () => {
         var action = {
